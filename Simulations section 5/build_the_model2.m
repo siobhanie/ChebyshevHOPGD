@@ -22,9 +22,9 @@ X_T=ndSparse(zeros(n,1));
 for i=1:N1
     
    
-    solvec1 = A_of_mu([mus(i),mus2(i)])\u0;
+    %solvec1 = A_of_mu([mus(i),mus2(i)])\u0;
     solvec = solution_mat1(:,N1-i+1);
-    norm(solvec-solvec1)
+    %norm(solvec-solvec1)
 
     X_T(:,:,(N1-1)/2+1,i) = solvec;
     index((N1-1)/2+1,i)=1;
@@ -34,9 +34,9 @@ end
 
 for i=1:N2
  
-    solvec1 = A_of_mu([mus(end),mus2(i+N2)])\u0;
+    %solvec1 = A_of_mu([mus(end),mus2(i+N2)])\u0;
     solvec = solution_mat2(:,N2-i+1);
-    norm(solvec1-solvec)
+    %norm(solvec1-solvec)
     
     X_T(:,:,i,(N1-1)/2+1) = solvec;
     index(i,(N1-1)/2+1)=1;
@@ -56,15 +56,15 @@ index=logical(index);
 X1 = Model.F1; X2 = Model.F2; X3 = Model.F3; X4 = Model.F4; a = Model.alpha; 
 k=length(a); rel_err=[]; 
 
-a = a(1:15); 
-X1 = X1(:,1:15);
-X2 = X2(:,1:15);
-X3 = X3(:,1:15);
-X4 = X4(:,1:15);
+a = a(1:25); 
+X1 = X1(:,1:25);
+X2 = X2(:,1:25);
+X3 = X3(:,1:25);
+X4 = X4(:,1:25);
 
-save('a_melina_c.mat','a');
-save('X1_melina_c.mat','X1');
-save('X2_melina_c.mat','X2');
-save('X3_melina_c.mat','X3');
-save('X4_melina_c.mat','X4');
+save('a_melina_b.mat','a');
+save('X1_melina_b.mat','X1');
+save('X2_melina_b.mat','X2');
+save('X3_melina_b.mat','X3');
+save('X4_melina_b.mat','X4');
 

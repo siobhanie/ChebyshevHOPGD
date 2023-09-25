@@ -56,9 +56,20 @@ index=logical(index);
 X1 = Model.F1; X2 = Model.F2; X3 = Model.F3; X4 = Model.F4; a = Model.alpha; 
 k=length(a); rel_err=[]; 
 
-% save('a_melina.mat','a');
-% save('X1_melina.mat','X1');
-% save('X2_melina.mat','X2');
-% save('X3_melina.mat','X3');
-% save('X4_melina.mat','X4');
+save('a_melina.mat','a');
+save('X1_melina.mat','X1');
+save('X2_melina.mat','X2');
+save('X3_melina.mat','X3');
+save('X4_melina.mat','X4');
 
+a = a(1:50); 
+X1 = X1(:,1:50);
+X2 = X2(:,1:50);
+X3 = X3(:,1:50);
+X4 = X4(:,1:50);
+
+save('a_melina.mat','a');
+save('X1_melina.mat','X1');
+save('X2_melina.mat','X2');
+save('X3_melina.mat','X3');
+save('X4_melina.mat','X4');
