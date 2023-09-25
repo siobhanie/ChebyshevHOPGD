@@ -1,7 +1,8 @@
-%clear all; clc; 
-load('nonsparse_helm_eq.mat'); n = length(A0); b = b'; 
-% f1 = @(mu) (cos(mu(1)) + mu(1)^2 + sin(mu(2)) + mu(2)); 
-% A_of_mu = @(mu) A0 + 2*pi^2*A2 + f1(mu)*A2;
+%Must load matrices created in FEniCS, use 2d_helm_nonsparse.py
+%load('nonsparse_helm_eq.mat'); 
+
+n = length(A0); b = b'; 
+
 
 f1 = @(mu) cos(mu(1)) + mu(1)^3;
 f2 = @(mu) sin(mu(2)) + mu(2)^2; 
@@ -40,17 +41,3 @@ save('X2_full_grid.mat','X2');
 save('X3_full_grid.mat','X3');
 
 
-
-
-% k=length(X1(1,:)); rel_err=[]; 
-% for i=1:N1
-%     for j=1:N2
-%         model_sol=zeros(n,1); 
-%         for l=1:k
-%             model_sol = model_sol + X1(:,l)*X2(i,l)*X3(j,l); 
-%         end
-%         exact_sol = X(:,i,j);
-%         model_Tensor(:,i,j) = model_sol; 
-%         perErr(i,j) = norm(exact_sol-model_sol)*100/norm(exact_sol); 
-%     end
-% end
